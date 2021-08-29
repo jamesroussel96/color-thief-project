@@ -13,7 +13,6 @@ def open_file():
     global file
     with open(askopenfilename(filetypes=[('Image Files', '.jpeg'), ('Image Files', '.png')]), encoding='ANSI') as f:
         file = f.read()
-    #file_path = askopenfile(mode='r', filetypes=[('Image Files', '.jpeg'), ('Image Files', '.png')])
     if file_path is not None:
         pass
 
@@ -21,13 +20,12 @@ def open_file():
 
 def get_colors():
         color_thief = ColorThief(file)
-        # get the dominant color
         dominant_color = color_thief.get_color(quality=1)
-        # build a color palette
         palette = color_thief.get_palette(color_count=6)
 
 
-
+#potential fixes
+        
 # index = ["color", "color_name", "hex_code", "R", "G", "B"]
 # color_list = pandas.read_csv('color list.csv', names=index, header=None)
 
@@ -40,8 +38,7 @@ window.title('Common Colors')
 window.config(padx=0, pady=0)
 window.geometry('600x500')
 window.resizable(width=False, height=False)
-# window.iconbitmap('window_icon.ico')
-# bg = PhotoImage(file='logo.png')
+
 
 canvas = Canvas(window, width=600, height=500)
 canvas.pack(fill='both', expand=True)
